@@ -10,6 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Assets\OIG.N5o-removebg-preview.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Avalonia" Version="11.2.0-beta1" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.0-beta1" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.0-beta1" />
@@ -17,6 +21,7 @@
 
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.0-beta1" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="SukiUI" Version="6.0.0-beta8" />
   </ItemGroup>
 </Project>
