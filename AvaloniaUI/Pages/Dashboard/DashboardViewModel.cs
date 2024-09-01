@@ -33,7 +33,7 @@ namespace AvaloniaUI.Pages.Dashboard
 
         private readonly ISukiDialogManager _dialogManager;
 
-        public DashboardViewModel(ISukiDialogManager dialogManager) : base("Dashboard", MaterialIconKind.CircleOutline, -100)
+        public DashboardViewModel(ISukiDialogManager dialogManager) : base("Dashboard", MaterialIconKind.CircleOutline, 200)
         {
             _dialogManager = dialogManager;
             StepperIndex = 1;

@@ -11,7 +11,7 @@ using Material.Icons;
 
 namespace AvaloniaUI.Pages.Welcome
 {
-    public partial class WelcomeViewModel(PageNavigationService nav) : PageBase("Welcome", MaterialIconKind.Hand, int.MinValue)
+    public partial class WelcomeViewModel(PageNavigationService nav) : PageBase("Welcome", MaterialIconKind.Hand, 0)
     {
         [ObservableProperty] private bool _dashBoardVisited;
 

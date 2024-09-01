@@ -23,4 +23,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
     <PackageReference Include="SukiUI" Version="6.0.0-beta8" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Pages\Dashboard\DashboardView.axaml.cs">
+      <DependentUpon>DashboardView.axaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
 </Project>
