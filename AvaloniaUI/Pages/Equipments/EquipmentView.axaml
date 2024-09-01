@@ -1,10 +1,53 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+			 xmlns:avalonia="clr-namespace:Material.Icons.Avalonia;assembly=Material.Icons.Avalonia"
+			 xmlns:suki="https://github.com/kikipoulet/SukiUI"
 			 xmlns:equipements="clr-namespace:AvaloniaUI.Pages.Equipments"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaUI.Pages.Equipments.EquipmentView"
 			 x:DataType="equipements:EquipmentViewModel">
-  Welcome to Avalonia!
+	<suki:SukiStackPage>
+		<suki:SukiStackPage.Content>
+
+			<SplitView Name="Equipments"
+                       CompactPaneLength="10"
+                       DisplayMode="CompactInline"
+                       IsPaneOpen="False">
+				<Grid ColumnDefinitions="2*, 4, *">
+					<suki:GlassCard Margin="20">
+						<StackPanel>
+							<DataGrid MinWidth="350"
+                                  MaxHeight="200"
+                                  CanUserResizeColumns="{Binding
+								  IsDataGridColumnsResizable}"
+								  ItemsSource="{Binding DataGridContent}">
+								<DataGrid.Columns>
+									<DataGridTextColumn Binding="{Binding StringColumn}"
+														Header="String" />
+									<DataGridTextColumn Binding="{Binding IntColumn}"
+														CellStyleClasses="RightAlign"
+														Header="Int" />
+									<DataGridCheckBoxColumn Binding="{Binding BoolColumn}"
+															CellStyleClasses="CenterAlign"
+															Header="Bool" />
+								</DataGrid.Columns>
+							</DataGrid>
+						</StackPanel>
+					</suki:GlassCard>
+					<GridSplitter Grid.Row="0"
+                                  Grid.Column="1"
+                                  Background="Transparent"
+                                  ResizeDirection="Columns" />
+					<suki:GlassCard Name="GlassExample"
+                                    Grid.Row="0"
+                                    Grid.Column="2"
+                                    Margin="20" >
+						
+					</suki:GlassCard>
+				</Grid>
+			</SplitView>
+		</suki:SukiStackPage.Content>
+	</suki:SukiStackPage>
 </UserControl>
