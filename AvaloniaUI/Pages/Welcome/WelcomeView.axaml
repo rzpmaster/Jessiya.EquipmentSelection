@@ -7,7 +7,7 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="AvaloniaUI.Pages.Welcome.WelcomeView"
 			 x:DataType="welcome:WelcomeViewModel">
-	<suki:GlassCard Margin="40"
+	<suki:GlassCard Margin="40" MinWidth="800"
 					HorizontalAlignment="Center"
 					VerticalAlignment="Center">
 		<suki:GroupBox Header="欢迎使用清风风设备选型工具">
