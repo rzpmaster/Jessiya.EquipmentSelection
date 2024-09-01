@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AvaloniaUI.Pages.Dashboard;
 using AvaloniaUI.Services;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
@@ -13,13 +12,28 @@ namespace AvaloniaUI.Pages.Welcome
 {
     public partial class WelcomeViewModel(PageNavigationService nav) : PageBase("Welcome", MaterialIconKind.Hand, 0)
     {
-        [ObservableProperty] private bool _dashBoardVisited;
+        [RelayCommand]
+        private void OpenSettings()
+        {
+            nav.RequestNavigation<Settings.SettingViewModel>();
+        }
 
         [RelayCommand]
         private void OpenDashboard()
         {
-            DashBoardVisited = true;
-            nav.RequestNavigation<DashboardViewModel>();
+            nav.RequestNavigation<Dashboard.DashboardViewModel>();
+        }
+
+        [RelayCommand]
+        private void OpenEquipments()
+        {
+            nav.RequestNavigation<Equipments.EquipmentViewModel>();
+        }
+
+        [RelayCommand]
+        private void OpenRules()
+        {
+            nav.RequestNavigation<Rules.RuleViewModel>();
         }
     }
 }
